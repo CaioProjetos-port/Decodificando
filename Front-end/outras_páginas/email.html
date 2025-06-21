@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Decodificando</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @font-face {
+            font-family: 'Fonte-principal', sans-serif;
+            src: url(fonts/29lt-bukra.ttf) format('truetype');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            min-width: 100vw;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(315deg, #0f141f, #1f6d41);
+            font-family: 'Fonte-principal', sans-serif;
+        }
+
+        .main-container {
+            max-width: 650px;
+            width: 90%;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #151515;
+            border-radius: 26px;
+            padding: 3rem 2rem;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .email-icon {
+            font-size: 5rem;
+            color: #0da850;
+            margin-bottom: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .title {
+            color: #fff;
+            font-family: 'Fonte-principal', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            color: #aaa;
+            font-family: 'Fonte-principal', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .message {
+            color: #fff;
+            font-family: 'Fonte-principal', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.05);
+            line-height: 1.8;
+        }
+
+        .working-on {
+            color: #0da850;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #0da850;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .contact-info {
+            background-color: rgba(31, 109, 65, 0.1);
+            border: 1px solid #0da850;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            width: 100%;
+        }
+
+        .contact-info h3 {
+            color: #0da850;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-info p {
+            color: #aaa;
+            margin-bottom: 0.5rem;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #fff;
+            background-color: transparent;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-family: 'Fonte-principal', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .back-button:hover {
+            background-color: #fff;
+            color: #151515;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .social-link {
+            color: #aaa;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            color: #0da850;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 650px) {
+            .main-container {
+                border-radius: 24px;
+                margin: 15px;
+                padding: 2rem 1.5rem;
+            }
+
+            .title {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .email-icon {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <i class="far fa-envelope email-icon"></i>
+        
+        <h1 class="title">Contato</h1>
+        
+        <p class="subtitle">Decodificando</p>
+        
+        <div class="message">
+            <p>Estamos trabalhando para facilitar o envio de e-mail e tornar nosso contato ainda mais próximo de você!</p>
+            
+            <div class="working-on">
+                <div class="spinner"></div>
+                Trabalhando nisso...
+            </div>
+            
+            <p>Em breve, você terá uma forma mais simples e direta de entrar em contato conosco. Nosso objetivo é estar sempre disponível para responder suas dúvidas e ouvir suas sugestões sobre o mundo da tecnologia.</p>
+        </div>
+
+        <div class="contact-info">
+            <h3>📧 Enquanto isso, você pode nos encontrar:</h3>
+            <p>• Acompanhe nossos serviços e blog no site principal</p>
+            <p>• Siga-nos nas redes sociais para novidades</p>
+            <p>• Em breve: formulário de contato direto</p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://github.com/CaioProjetos-port" class="social-link" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/decodificando._/" class="social-link" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        
+        <a href="javascript:history.back()" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Voltar ao site
+        </a>
+    </div>
+</body>
+</html>
+

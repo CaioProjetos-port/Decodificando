@@ -28,7 +28,7 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: start;
-        padding: 15%;
+        padding: 7%;
     
         .logo{
             max-width: 200px;
@@ -36,11 +36,18 @@ body {
             object-fit: contain;
         }
 
+        .line{
+            margin-top: 2rem;
+            background-color: #fff;
+            width: 100%;
+            height: 1px;
+        }
+
         .title{
             color: #fff;
             font-family: 'Fonte-principal', sans-serif;
             font-size: 1.2rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
             text-align: center;
         }
 
@@ -64,8 +71,48 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: start;
+
+        .body-section{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            .body-section-element{
+                color: #bbb;
+                font-family: 'Fonte-principal', sans-serif;
+                font-size: 1.2rem;
+                margin: .5rem;
+                margin-top: 0;
+                cursor: pointer;
+            }
+
+            .body-section-element:hover, .active{
+                color: #fff;
+                transform: scale(1.1);
+            }
+        }
+
+        .body-line{
+            width: 100%;
+            display: flex;
+            align-items: end;
+            height: 2px;
+            margin-bottom: 2.5rem;
+
+            .line{
+                background-color: #fff;
+                width: 100%;
+                height: 1px;
+                margin: 0;
+            }
+
+            .active{
+                height: 2px;
+            }
+        }
         
-        .element-container{
+        .element-container, .notice-container{
             width: 80%;
             display: flex;
             flex-wrap: wrap;
@@ -76,6 +123,7 @@ body {
             border-radius: 10px;
             padding: 1rem;
             text-decoration: none;
+            margin-bottom: 2.5rem;
             
             .element-icon{
                 max-width: 100px;
@@ -86,16 +134,23 @@ body {
             .element-title{
                 font-size: 2.2rem;
                 text-align: end;
-                padding-left: 2rem;
+                padding-left: 1rem;
                 margin: 0;
             }
 
             .element-description{
                 font-family: 'Fonte-principal', sans-serif;
                 color: #aaa;
+                margin: 0;
                 margin-top: 1rem;
-                font-size: 1rem;
+                font-size: .9rem;
+                text-align: justify;
+                
             }
+        }
+
+        .notice-container{
+            display: none;
         }
     }
 }
@@ -106,6 +161,10 @@ body {
         border-radius: 24px;
         margin: 15px;
         height: auto;
+    }
+
+    .head-container{
+        padding-bottom: 10%;
     }
 }
 
