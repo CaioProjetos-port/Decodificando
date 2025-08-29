@@ -36,18 +36,11 @@ body {
             object-fit: contain;
         }
 
-        .line{
-            margin-top: 2rem;
-            background-color: #fff;
-            width: 100%;
-            height: 1px;
-        }
-
         .title{
             color: #fff;
             font-family: 'Fonte-principal', sans-serif;
             font-size: 1.2rem;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             text-align: center;
         }
 
