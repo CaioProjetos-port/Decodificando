@@ -1,239 +1,263 @@
-html, body{
-    height: 100%;
-    width: 100%;
-    min-height: 100vh;
-    min-width: 100vw;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(315deg, #0f141f, #1f6d41 );
+@charset "UTF-8";
+html, body {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(270deg, #0f141f 0%, #1a3a29 25%, #215c38 50%, #247346 75%, #28834f 100%);
+  background-size: 600% 600%;
+  animation: gradiente-move 30s infinite linear;
 }
 
-
-    /* BARRA DE NAVEGAÇÃO */
-
-.navbar{
-    width: 100%;
-    display: flex;
-    font-family: 'Fonte-principal' sans-serif;
-
-    .navbar-left{
-        display: flex;
-        margin-left: 10%;
-
-        .navbar-logo{
-            height: 2rem;
-        }
-    }
-
-    .navbar-right{
-        display: flex;
-        margin-right: 10%;
-        gap: 1.5rem;
-
-        .link{
-            text-decoration: none;
-            font-weight: bold;
-            color: #eee;
-        }
-    }
-}
-        
-.contact-circle{
-    position: absolute;
-    top: 90vh;
-    left: 90vw;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    background: linear-gradient(135deg, rgb(13, 199, 13), #103822);
-    border: white solid .8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .icon{
-        position: absolute;
-        color: #eee;
-        opacity: 0;
-        transition-duration: 1s;
-        transform: scale(2);
-    }
-}
-    /* BARRA DE CONTATOS */
-    
-.contacts-container{
-    position: absolute;
-    display: flex;
-    justify-content: end;
-    top: 90vh;
-    left: calc(90vw + 4rem - 220px);
-    width: 220px;
-    height: 4rem;
-
-    .contacts{
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: end;
-        height: 4rem;
-        width: 4rem;
-        border-radius: 50%;
-        color: #111;
-        background-color: #e0e0e0;
-        font-size: larger;
-        text-decoration: none;
-        transition-duration: 1.6s;
-        text-wrap: nowrap;
-        
-        .contact-content{
-            margin-left: 1.1rem;
-            margin-right: 1.2rem;
-        }
-        
-        .text-content{
-            overflow: hidden;
-            
-            .contact-text{
-                transform: translateX(140px);
-                transition-duration: 2s;
-                margin: 0;
-            }
-        }
-    }
-
-    .contacts:hover{
-        background-color: #111;
-        transition-duration: .3s;
-        color: #e0e0e0;
-    }
+/* BARRA DE NAVEGAÇÃO */
+.navbar {
+  width: 100%;
+  display: flex;
+  font-family: "Fonte-principal" sans-serif;
 }
 
-
-    /* SEÇÃO PRINCIPAL */
-
-.main-section{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 7rem;
-    
-    .main-section-left{
-        display: block;
-        width: 50%;
-        
-    }
-    
-    .login-section{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        font-family: 'Fonte-principal', sans-serif;
-        width: 50%;
-        padding: 4rem;
-        
-        .login-title{
-            color: #e0e0e0;
-            font-size: x-large;
-            font-weight: 500;
-            letter-spacing: 3px;
-            margin-bottom: 4rem;
-        }
-
-        .login-container{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            width: 100%;
-            max-width: 28rem;
-            
-            .conect-type{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 90%;
-                padding: 0px;
-                
-                .p{
-                    color: #e0e0e0;
-                    font-size: large;
-                    font-weight: 400;
-                    cursor: pointer;
-                }   
-            }
-            
-            .selection-bar{
-                display: flex;
-                align-items: center;
-                width: 90%;
-                height: 10px;
-                margin-top: 10px;
-                border-radius: 20px;
-                background-color: #888;
-                
-                .selection-type-bar{
-                    width: 120px;
-                    height: 10px;
-                    border-radius: 20px;
-                    background-color: #eee;
-                    transition-duration: .8s;
-                }
-            }
-            
-            .log-in{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                margin-top: 25px;
-                width: 100%;
-        
-                .a{
-                    color: #e0e0e0;
-                    width: 100%;
-                    text-decoration: none;
-                }
-            }
-            
-            .sign-in{
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                margin-top: 25px;
-                width: 90%;
-            }
-            
-            .input{
-                width: 100%;
-                height: 40px;
-                padding: 10px;
-                margin-bottom: 20px;
-                background-color: #e0e0e0;
-                border-radius: 10px;
-                font-weight: 600;
-            }
-            
-            .button{
-                color: #e0e0e0;
-                background-color: #212121;
-                width: 200px;
-                height: 40px;
-                border-radius: 15px;
-                border: #e0e0e0 solid 2px;
-            }
-            
-            .button:hover{
-                background-color: #e0e0e0;
-                color: #212121;
-            }
-        }
-    }
+.navbar-left {
+  display: flex;
+  margin-left: 10%;
+}
+.navbar-left .navbar-logo {
+  height: 2rem;
 }
 
+.navbar-right {
+  display: flex;
+  margin-right: 10%;
+  gap: 1.5rem;
+}
+.navbar-right .link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #eee;
+}
 
+.contact-circle {
+  position: absolute;
+  top: 90vh;
+  left: 90vw;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgb(13, 199, 13), #103822);
+  border: white solid 0.8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-circle .icon {
+  position: absolute;
+  color: #eee;
+  opacity: 0;
+  transition-duration: 1s;
+  transform: scale(2);
+}
+
+/* BARRA DE CONTATOS */
+.contacts-container {
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  top: 90vh;
+  left: calc(90vw + 4rem - 220px);
+  width: 220px;
+  height: 4rem;
+}
+.contacts-container .contacts {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  color: #111;
+  background-color: #e0e0e0;
+  font-size: larger;
+  text-decoration: none;
+  transition-duration: 1.6s;
+  text-wrap: nowrap;
+}
+.contacts-container .contacts .contact-content {
+  margin-left: 1.1rem;
+  margin-right: 1.2rem;
+}
+.contacts-container .contacts .text-content {
+  overflow: hidden;
+}
+.contacts-container .contacts .text-content .contact-text {
+  transform: translateX(140px);
+  transition-duration: 2s;
+  margin: 0;
+}
+.contacts-container .contacts:hover {
+  background-color: #111;
+  transition-duration: 0.3s;
+  color: #e0e0e0;
+}
+
+/* SEÇÃO PRINCIPAL */
+.main-section {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 7rem;
+}
+
+.animation-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  background-color: #ddd;
+}
+.animation-section .animation-container {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: column;
+  background-color: #999;
+}
+.animation-section .animation-container .animation-shadow {
+  position: absolute;
+  width: 15rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: #666;
+}
+.animation-section .animation-container .animation-code {
+  width: 11rem;
+  height: 8rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background-color: #333;
+  overflow: hidden;
+  z-index: 2;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 5rem;
+  font-weight: 100;
+  text-align: center;
+  color: #fff;
+}
+.animation-section .animation-container .animation-code .animation-lt {
+  width: 30%;
+  animation: lt-animation 15s linear infinite;
+}
+.animation-section .animation-container .animation-code .animation-bar {
+  width: 20%;
+}
+.animation-section .animation-container .animation-code .animation-mt {
+  width: 30%;
+}
+
+.login-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Fonte-principal", sans-serif;
+  width: 50%;
+  padding: 4rem;
+}
+.login-section .login-title {
+  color: #e0e0e0;
+  font-size: x-large;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+.login-section .login-subtitle {
+  color: #e0e0e0;
+  letter-spacing: 1px;
+  margin-bottom: 3rem;
+}
+.login-section .login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 28rem;
+}
+.login-section .login-container .conect-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  padding: 0px;
+}
+.login-section .login-container .conect-type .p {
+  color: #e0e0e0;
+  font-size: large;
+  font-weight: 400;
+  cursor: pointer;
+}
+.login-section .login-container .selection-bar {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  height: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: #888;
+}
+.login-section .login-container .selection-bar .selection-type-bar {
+  width: 120px;
+  height: 10px;
+  border-radius: 20px;
+  background-color: #eee;
+  transition-duration: 0.8s;
+}
+.login-section .login-container .log-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+  width: 100%;
+}
+.login-section .login-container .log-in .a {
+  color: #e0e0e0;
+  width: 100%;
+  text-decoration: none;
+}
+.login-section .login-container .sign-in {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+  width: 90%;
+}
+.login-section .login-container .input {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.login-section .login-container .button {
+  color: #e0e0e0;
+  background-color: #212121;
+  width: 200px;
+  height: 40px;
+  border-radius: 15px;
+  border: #e0e0e0 solid 2px;
+}
+.login-section .login-container .button:hover {
+  background-color: #e0e0e0;
+  color: #212121;
+}
 
 /* ABOUT PAGE 
 
@@ -255,7 +279,7 @@ html, body{
         justify-content: center;
         width: 5%;
         transform: translateY(100px);
-        
+
         .name{
             transform: rotate(-90deg);
             color: #e0e0e0;
@@ -337,7 +361,7 @@ html, body{
         .front-end{
             background-image: linear-gradient(to bottom, rgb(95, 138, 255), #000080 );
         }
-        
+
         .back-end{
             background-image: linear-gradient(to bottom, orange, orangered );
         }
@@ -382,7 +406,7 @@ html, body{
         overflow: auto;
         margin-left: 5%;
         width: 90%;    
-    
+
         .filter-button{
             display: flex;
             align-items: center;
@@ -401,7 +425,7 @@ html, body{
             border: lawngreen solid 2px;
         }
     }
-    
+
     .port-project-cards-container{
         display: flex;
         justify-content: center;
@@ -429,7 +453,7 @@ html, body{
             color: #111;
             font-size: x-large;
             font-weight: 500;
-            
+
         }
 
         .port-project-description{
@@ -456,15 +480,51 @@ html, body{
     }
 }
 */
-
 /* CONFIGURAÇÕES PARA CELULAR e tablet */
 @media screen and (max-width: 1000px) {
-    .main-section{
-        flex-direction: column;
-    }
+  .navbar-right {
+    display: none;
+  }
+  .main-section {
+    justify-content: center;
+    flex-wrap: wrap; /* ou wrap-reverse */
+    margin-top: 3rem;
+  }
+  .animation-section {
+    width: 90%;
+  }
+  .login-section {
+    width: 90%;
+    padding: 0;
+  }
+}
+/* FONTE PRINCIPAL */
+@font-face {
+  font-family: "Fonte-principal", sans-serif;
+  src: url(fonts/29lt-bukra.ttf) format("truetype");
+}
+/* ANIMÇÃO DO BACKGROUND */
+@keyframes gradiente-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes lt-animation {
+  0% {
+    transform: translateY(8rem);
+  }
+  10% {
+    transform: translateY(0px, -10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 
-@font-face {
-    font-family: 'Fonte-principal', sans-serif;
-    src: url(fonts/29lt-bukra.ttf) format('truetype');
-}
+/*# sourceMappingURL=style.css.map */

@@ -73,13 +73,22 @@
     <div class="main-section">
 
         <!-- seção lateral principal -->
-        <div id="main-section-left" class="main-section-left">
+        <div id="main-section-left" class="animation-section">
+            <div class="animation-container">
+                <div class="animation-code">
+                    <div class="animation-lt"><</div>
+                    <div class="animation-bar">/</div>
+                    <div class="animation-mt">></div>
+                </div>
+                <div class="animation-shadow"></div>
+            </div>
         </div>
         
         
         <!-- seção de login -->
         <div id="talk-page" class="login-section">
-            <h1 class="login-title">Acesse nossos serviços</h1>
+            <h1 class="login-title">Faça parte</h1>
+            <p class="login-subtitle">Crie uma conta ou entre para usar os serviços</p>
                 
             <div class="login-container">
                 <div class="conect-type">
