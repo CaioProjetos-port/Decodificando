@@ -87,7 +87,7 @@ const selection_type = document.querySelector(`.selection-bar`);
 const button_type = document.querySelector(`.selection-type-bar`);
 
 const log_in_container = document.querySelector(`.log-in`);
-const sing_in_container = document.querySelector(`.sign-in`);
+const sing_in_container = document.querySelector(`.new-count`);
 
 
 log_in.addEventListener('click', function() {
@@ -103,6 +103,23 @@ sing_in.addEventListener('click', function() {
     log_in_container.style.display = `none`;
     sing_in_container.style.display = `flex`;
 });
+
+
+
+/* ANIMAÇÕES DA TELA */
+
+let animation = 0;
+
+async function Animation() {
+    const animation_element = document.querySelector(`.animation-${animation}`);
+
+    animation_element.style.display = `flex`;
+    await sleep(8000);
+    animation_element.style.display = `none`;
+
+    animation = (animation + 1) % 2;
+}
+
 
 
 
@@ -131,3 +148,6 @@ submit_log.addEventListener("click", function(event) {
 
 blink_contact();
 setInterval(blink_contact, 3000);
+
+Animation();
+setInterval(Animation, 8000);

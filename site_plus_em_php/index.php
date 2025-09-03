@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caio Monte</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <!-- imports CSS -->
@@ -75,12 +77,37 @@
         <!-- seção lateral principal -->
         <div id="main-section-left" class="animation-section">
             <div class="animation-container">
-                <div class="animation-code">
-                    <div class="animation-lt"><</div>
-                    <div class="animation-bar">/</div>
-                    <div class="animation-mt">></div>
-                </div>
                 <div class="animation-shadow"></div>
+                <div class="animation-monitor">
+                    <div class="animation-screen">
+                        <div class="animation-window">
+                            <div class="animation-0">
+                                <div class="lt">
+                                    <div class="slash-1"></div>
+                                    <div class="slash-2"></div>
+                                </div>
+
+                                <div class="circle-1"></div>
+
+                                <div class="circle-2"></div>
+
+                                <div class="slash"></div>
+
+                                <div class="mt">
+                                    <div class="slash-1"></div>
+                                    <div class="slash-2"></div>
+                                </div>
+
+                            </div>
+
+                            <div class="animation-1">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animation-suport"></div>
+                    <div class="animation-feet"></div>
+                </div>
             </div>
         </div>
         
@@ -111,11 +138,11 @@
                     <input class="button" id="login-button" type="submit" value="Entrar">
                 </form>
 
-                <form class="sign-in">
-                    <input class="input" id="name-s" type="text" placeholder="Nome" required>
-                    <input class="input" id="email-s" type="email" placeholder="E-mail" required>
-                    <input class="input" id="password-s" type="password" placeholder="Senha" required>
-                    <input class="input" id="confirm-password-s" type="password" placeholder="Confirme a Senha" required>
+                <form class="new-count">
+                    <input class="input" id="name-new" name="name-new" type="text" placeholder="Nome" required>
+                    <input class="input" id="email-new" name="email-new" type="email" placeholder="E-mail" required>
+                    <input class="input" id="password-new" name="password-new" type="password" placeholder="Senha" required>
+                    <input class="input" id="confirm-password-new" name="confirm-password-new" type="password" placeholder="Confirme a Senha" required>
                     
                     <input class="button" type="submit" value="Criar Conta">
                 </form>
