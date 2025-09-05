@@ -1,3 +1,21 @@
+<?php 
+require_once __DIR__ . '/app/register.php';
+
+$mensagem = "";
+
+// formulário de cadastro
+if (isset($_POST['register'])) {
+    $nome = $_POST['name-register'];
+    $email = $_POST['email-register'];
+    $senha = $_POST['password-register'];
+    $confirm = $_POST['confirm-register'];
+
+    $res = registerUser($nome, $email, $senha, $confirm);
+    if 
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -138,13 +156,13 @@
                     <input class="button" id="login-button" type="submit" value="Entrar">
                 </form>
 
-                <form class="new-count">
-                    <input class="input" id="name-new" name="name-new" type="text" placeholder="Nome" required>
-                    <input class="input" id="email-new" name="email-new" type="email" placeholder="E-mail" required>
-                    <input class="input" id="password-new" name="password-new" type="password" placeholder="Senha" required>
-                    <input class="input" id="confirm-password-new" name="confirm-password-new" type="password" placeholder="Confirme a Senha" required>
+                <form class="sign-up" >
+                    <input class="input" id="name-register" name="name-register" type="text" placeholder="Nome" required>
+                    <input class="input" id="email-register" name="email-register" type="email" placeholder="E-mail" required>
+                    <input class="input" id="password-register" name="password-register" type="password" placeholder="Senha" required>
+                    <input class="input" id="confirm-register" name="confirm-register" type="password" placeholder="Confirme a Senha" required>
                     
-                    <input class="button" type="submit" value="Criar Conta">
+                    <input class="button" type="submit" name="register" value="Criar Conta">
                 </form>
             </div>
         </div>

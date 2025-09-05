@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../config/config.php';     // inclui o arquivo com as configurações do DB
 
-try {
+try {       // tenta conectar ao banco
     $pdo = new PDO(
         "mysql:host={$db_config['host']};dbname={$db_config['dbname']};charset=utf8",
         $db_config['user'],

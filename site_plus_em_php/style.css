@@ -305,7 +305,7 @@ html, body {
   width: 100%;
   text-decoration: none;
 }
-.login-section .login-container .new-count {
+.login-section .login-container .sign-up {
   display: none;
   flex-direction: column;
   align-items: center;

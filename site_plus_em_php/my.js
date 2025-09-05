@@ -87,7 +87,7 @@ const selection_type = document.querySelector(`.selection-bar`);
 const button_type = document.querySelector(`.selection-type-bar`);
 
 const log_in_container = document.querySelector(`.log-in`);
-const sing_in_container = document.querySelector(`.new-count`);
+const sing_in_container = document.querySelector(`.sign-up`);
 
 
 log_in.addEventListener('click', function() {
@@ -122,28 +122,6 @@ async function Animation() {
 
 
 
-
-
-/* ENVIO DE FORMULARIO 
-
-const submit_log = document.getElementById("log-in-button");
-
-submit_log.addEventListener("click", function(event) {
-    const email = document.getElementById("email-log");
-    const password = document.getElementById("password-log");
-    
-    if (email.value === "" || password.value === "") {
-        email.placeholder = "Digite um e-mail";
-        password.placeholder = "Digite uma senha";
-        event.preventDefault();
-    }
-    if (password.value.length < 4 || password.value.length > 8) {
-        alert("A senha deve ter entre 4 e 8 caracteres.");
-        event.preventDefault();
-    }
-
-});
-*/
 
 
 blink_contact();
