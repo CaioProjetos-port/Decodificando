@@ -334,6 +334,13 @@ html, body {
   background-color: #e0e0e0;
   color: #212121;
 }
+.login-section .register-message {
+  font-family: "Fonte-principal", sans-serif;
+  font-size: larger;
+  color: #e0e0e0;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+}
 
 /* ABOUT PAGE 
 

@@ -3,8 +3,6 @@ function sleep(ms) {
 }
 
 
-
-
 /* ICONE DE CONTATOS */
 
 let icon = 0;
@@ -76,8 +74,6 @@ async function() {
 });
 
 
-
-
 /* BARRA DE LOG-IN E SIGN-IN */
 
 const log_in = document.getElementById(`log-in`);
@@ -105,7 +101,6 @@ sing_in.addEventListener('click', function() {
 });
 
 
-
 /* ANIMAÇÕES DA TELA */
 
 let animation = 0;
@@ -119,8 +114,6 @@ async function Animation() {
 
     animation = (animation + 1) % 2;
 }
-
-
 
 
 

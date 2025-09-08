@@ -1,5 +1,6 @@
 <?php 
-require_once __DIR__ . '/app/register.php';
+require_once __DIR__ . '/../private/app/register.php';
+require_once __DIR__ . '/../private/app/auth.php';
 
 $mensagem = "";
 
@@ -11,7 +12,23 @@ if (isset($_POST['register'])) {
     $confirm = $_POST['confirm-register'];
 
     $res = registerUser($nome, $email, $senha, $confirm);
-    if 
+    if ($res === 0) $mensagem = "Usuário cadastrado com sucesso! faça login.";
+    elseif ($res === 1) $mensagem = "Email ja cadastrado!";
+    elseif ($res === 2) $mensagem = "Senhas não conferem!";
+}
+
+// formulário de login
+if (isset($_POST['login'])) {
+    $email = $_POST['name-log'];
+    $senha = $_POST['password-log'];
+
+    if(loginUser($email, $senha)) {
+        header("Location: ../public/dashboard.php");
+        exit;
+    }
+    else {
+        $mensagem = "Email ou senha incorretos!";
+    }
 }
 ?>
 
@@ -28,7 +45,7 @@ if (isset($_POST['register'])) {
 
 <!-- imports CSS -->
 <div>   
-    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./assets/style.css?v=<?php echo time(); ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </div>
@@ -87,9 +104,7 @@ if (isset($_POST['register'])) {
         <i id="blink-icon-4" class="icon fa-regular fa-envelope"></i>
     </div>
     
-    
-
-
+    <!-- seção principal -->
     <div class="main-section">
 
         <!-- seção lateral principal -->
@@ -129,7 +144,6 @@ if (isset($_POST['register'])) {
             </div>
         </div>
         
-        
         <!-- seção de login -->
         <div id="talk-page" class="login-section">
             <h1 class="login-title">Faça parte</h1>
@@ -146,17 +160,17 @@ if (isset($_POST['register'])) {
                     </div>
                 </div>
                     
-                <form class="log-in" action="" method="post">
+                <form class="log-in" method="post">
                     <input class="input" id="email-log" name="name-log" id="name-log" type="text" placeholder="E-mail" required>
                     <input class="input" id="password-log" name="password-log" id="password-log" type="password" placeholder="Senha" required>
                     
                     <a href="" class="a">Esqueci a Senha</a>
                     <br><br><br><br>
                     
-                    <input class="button" id="login-button" type="submit" value="Entrar">
+                    <input class="button" name="login" type="submit" value="Entrar">
                 </form>
 
-                <form class="sign-up" >
+                <form class="sign-up" method="post">
                     <input class="input" id="name-register" name="name-register" type="text" placeholder="Nome" required>
                     <input class="input" id="email-register" name="email-register" type="email" placeholder="E-mail" required>
                     <input class="input" id="password-register" name="password-register" type="password" placeholder="Senha" required>
@@ -164,6 +178,10 @@ if (isset($_POST['register'])) {
                     
                     <input class="button" type="submit" name="register" value="Criar Conta">
                 </form>
+
+                <div class="register-message">
+                    <?php echo $mensagem; ?>
+                </div>
             </div>
         </div>
     </div>
@@ -290,7 +308,7 @@ if (isset($_POST['register'])) {
 <!-- imports JavaScript -->
 <div> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="my.js?v=<?php echo time(); ?>" type="module"></script>
+    <script src="./assets/my.js?v=<?php echo time(); ?>" type="module"></script>
 </div>
 
 </html>
