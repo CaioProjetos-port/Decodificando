@@ -1,34 +1,40 @@
 @charset "UTF-8";
 html, body {
-  height: 100%;
-  width: 100%;
   min-height: 100vh;
-  min-width: 100vw;
+  min-width: 100%;
+  top: 0;
   margin: 0;
   padding: 0;
-  background: linear-gradient(270deg, #0f141f 0%, #1a3a29 25%, #215c38 50%, #247346 75%, #28834f 100%);
+  background: linear-gradient(270deg, #212121 0%, #212121 25%, #212121 50%, #212121 75%, #212121 100%);
   background-size: 600% 600%;
   animation: gradiente-move 30s infinite linear;
 }
 
-/* BARRA DE NAVEGAÇÃO */
-.navbar {
-  width: 100%;
-  display: flex;
-  font-family: "Fonte-principal" sans-serif;
+/*
+* {
+    outline: 1px solid red !important;
 }
 
-.navbar-left {
+    /* BARRA DE NAVEGAÇÃO */
+.navbar-container {
+  position: fixed;
+  top: 1rem;
+  z-index: 1;
+  width: 100%;
   display: flex;
-  margin-left: 10%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5rem;
+  font-family: "Fonte-principal", sans-serif;
 }
+
 .navbar-left .navbar-logo {
-  height: 2rem;
+  max-height: 2rem;
+  width: auto;
 }
 
 .navbar-right {
   display: flex;
-  margin-right: 10%;
   gap: 1.5rem;
 }
 .navbar-right .link {
@@ -38,7 +44,7 @@ html, body {
 }
 
 .contact-circle {
-  position: absolute;
+  position: fixed;
   top: 90vh;
   left: 90vw;
   width: 4rem;
@@ -60,7 +66,7 @@ html, body {
 
 /* BARRA DE CONTATOS */
 .contacts-container {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: end;
   top: 90vh;
@@ -101,36 +107,130 @@ html, body {
   color: #e0e0e0;
 }
 
+/* SEÇÃO INTRODUÇÃO */
+.slides-section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  isolation: isolate;
+}
+.slides-section .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.slides-section .barra-inferior-total {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15vh;
+  z-index: 1;
+  pointer-events: none;
+}
+.slides-section .curva-full {
+  display: block;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: destination-out;
+}
+
+/* SEÇÃO INTRODUÇÃO */
+.blog-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  font-family: "Fonte-principal", sans-serif;
+}
+.blog-section .section-title {
+  color: #e0e0e0;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  padding-left: 2rem;
+  margin: 0;
+  margin-bottom: 1.2rem;
+}
+.blog-section .blog-posts-row {
+  display: flex;
+  justify-content: start;
+  gap: 1.5rem;
+}
+.blog-section .blog-posts-row .post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  gap: 0.6rem;
+  max-width: 14rem;
+}
+.blog-section .blog-posts-row .post .capa {
+  max-width: 10rem;
+  height: auto;
+  border-radius: 0.8rem;
+  background-color: #000;
+}
+.blog-section .blog-posts-row .post .post-title {
+  color: #e0e0e0;
+  font-size: 1rem;
+}
+.blog-section .section-subtitle {
+  display: flex;
+  flex-direction: column;
+}
+.blog-section .section-subtitle .subtitle {
+  color: #e0e0e0;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+.blog-section .section-subtitle .fa-brands {
+  margin: 0;
+  color: #e0e0e0;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+  text-decoration: none;
+}
+
 /* SEÇÃO PRINCIPAL */
 .main-section {
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  margin-top: 7rem;
+  padding-top: 6rem;
+  box-sizing: border-box;
 }
-
-.animation-section {
+.main-section .animation-section {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50%;
+  box-sizing: border-box;
 }
-.animation-section .animation-container {
+.main-section .animation-section .animation-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap-reverse;
   width: min-content;
 }
-.animation-section .animation-container .animation-monitor {
+.main-section .animation-section .animation-container .animation-monitor {
   display: flex;
   flex-direction: column;
   align-items: center;
   animation: monitor-animation 8s infinite linear;
   margin-bottom: 1rem;
 }
-.animation-section .animation-container .animation-monitor .animation-screen {
+.main-section .animation-section .animation-container .animation-monitor .animation-screen {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,16 +240,16 @@ html, body {
   background-color: #aaa;
   box-shadow: -3px -3px 0px 2px #777;
 }
-.animation-section .animation-container .animation-monitor .animation-screen .animation-0 {
+.main-section .animation-section .animation-container .animation-monitor .animation-screen .animation-0 {
   display: none;
   align-items: center;
   justify-content: center;
 }
-.animation-section .animation-container .animation-monitor .animation-screen .animation-0 .lt {
+.main-section .animation-section .animation-container .animation-monitor .animation-screen .animation-0 .lt {
   display: flex;
   margin-right: 3.5rem;
 }
-.animation-section .animation-container .animation-monitor .animation-screen .animation-0 .lt .slash-1 {
+.main-section .animation-section .animation-container .animation-monitor .animation-screen .animation-0 .lt .slash-1 {
   left: 0;
   background-color: #2e8849;
   width: 1rem;
@@ -157,7 +257,7 @@ html, body {
   border-radius: 1rem;
   transform: rotate(45deg) translate(0rem, -1.6rem);
 }
-.animation-section .animation-container .animation-monitor .animation-screen .animation-0 .lt .slash-2 {
+.main-section .animation-section .animation-container .animation-monitor .animation-screen .animation-0 .lt .slash-2 {
   position: absolute;
   background-color: #2e8849;
   width: 1rem;
@@ -165,30 +265,30 @@ html, body {
   border-radius: 1rem;
   transform: rotate(-45deg) translate(0rem, 1.6rem);
 }
-.animation-section .animation-container .animation-monitor .animation-screen .animation-0 .circle-1, .animation-section .animation-container .animation-monitor .animation-screen .animation-0 .circle-2 {
+.main-section .animation-section .animation-container .animation-monitor .animation-screen .animation-0 .circle-1, .main-section .animation-section .animation-container .animation-monitor .animation-screen .animation-0 .circle-2 {
   height: 0rem;
   width: 0rem;
   border-radius: 50%;
   background-color: #2e8849;
 }
-.animation-section .animation-container .animation-monitor .animation-screen .animation-0 .circle-1 {
+.main-section .animation-section .animation-container .animation-monitor .animation-screen .animation-0 .circle-1 {
   animation: circle-animation 8s infinite linear;
 }
-.animation-section .animation-container .animation-monitor .animation-screen .animation-0 .circle-2 {
+.main-section .animation-section .animation-container .animation-monitor .animation-screen .animation-0 .circle-2 {
   animation: circle-animation 8s 0.3s infinite linear;
 }
-.animation-section .animation-container .animation-monitor .animation-screen .animation-0 .slash {
+.main-section .animation-section .animation-container .animation-monitor .animation-screen .animation-0 .slash {
   background-color: #2e8849;
   width: 1rem;
   height: 5rem;
   border-radius: 1rem;
   transform: rotate(20deg) translate(0rem, 0rem);
 }
-.animation-section .animation-container .animation-monitor .animation-screen .animation-0 .mt {
+.main-section .animation-section .animation-container .animation-monitor .animation-screen .animation-0 .mt {
   display: flex;
   margin-left: 3.5rem;
 }
-.animation-section .animation-container .animation-monitor .animation-screen .animation-0 .mt .slash-1 {
+.main-section .animation-section .animation-container .animation-monitor .animation-screen .animation-0 .mt .slash-1 {
   left: 0;
   background-color: #2e8849;
   width: 1rem;
@@ -196,7 +296,7 @@ html, body {
   border-radius: 1rem;
   transform: rotate(-45deg) translate(0rem, -1.6rem);
 }
-.animation-section .animation-container .animation-monitor .animation-screen .animation-0 .mt .slash-2 {
+.main-section .animation-section .animation-container .animation-monitor .animation-screen .animation-0 .mt .slash-2 {
   position: absolute;
   background-color: #2e8849;
   width: 1rem;
@@ -204,7 +304,7 @@ html, body {
   border-radius: 1rem;
   transform: rotate(45deg) translate(0rem, 1.6rem);
 }
-.animation-section .animation-container .animation-monitor .animation-screen .animation-window {
+.main-section .animation-section .animation-container .animation-monitor .animation-screen .animation-window {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -213,20 +313,20 @@ html, body {
   border-radius: 0.2rem;
   background-color: #a8ebff;
 }
-.animation-section .animation-container .animation-monitor .animation-suport {
+.main-section .animation-section .animation-container .animation-monitor .animation-suport {
   width: 3rem;
   height: 2rem;
   background-color: #aaa;
   box-shadow: -3px 3px 0px 2px #777;
 }
-.animation-section .animation-container .animation-monitor .animation-feet {
+.main-section .animation-section .animation-container .animation-monitor .animation-feet {
   width: 6rem;
   height: 1rem;
   border-radius: 100% 100% 0px 0px;
   background-color: #aaa;
   box-shadow: -5px 0px 0px 0px #777;
 }
-.animation-section .animation-container .animation-shadow {
+.main-section .animation-section .animation-container .animation-shadow {
   width: 100%;
   height: 2rem;
   border-radius: 50%;
@@ -234,28 +334,29 @@ html, body {
   filter: blur(15px);
   animation: shadow-animation 8s infinite linear;
 }
-
-.login-section {
+.main-section .login-section {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-family: "Fonte-principal", sans-serif;
   width: 50%;
-  padding: 4rem;
+  padding: 0 3rem;
+  box-sizing: border-box;
+  font-family: "Fonte-principal", sans-serif;
 }
-.login-section .login-title {
+.main-section .login-section .login-title {
   color: #e0e0e0;
   font-size: x-large;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 3px;
 }
-.login-section .login-subtitle {
+.main-section .login-section .login-subtitle {
   color: #e0e0e0;
   letter-spacing: 1px;
   margin-bottom: 3rem;
+  text-align: center;
 }
-.login-section .login-container {
+.main-section .login-section .login-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -263,20 +364,20 @@ html, body {
   width: 100%;
   max-width: 28rem;
 }
-.login-section .login-container .conect-type {
+.main-section .login-section .login-container .conect-type {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 90%;
   padding: 0px;
 }
-.login-section .login-container .conect-type .p {
+.main-section .login-section .login-container .conect-type .p {
   color: #e0e0e0;
   font-size: large;
   font-weight: 400;
   cursor: pointer;
 }
-.login-section .login-container .selection-bar {
+.main-section .login-section .login-container .selection-bar {
   display: flex;
   align-items: center;
   width: 90%;
@@ -285,14 +386,14 @@ html, body {
   border-radius: 20px;
   background-color: #888;
 }
-.login-section .login-container .selection-bar .selection-type-bar {
+.main-section .login-section .login-container .selection-bar .selection-type-bar {
   width: 120px;
   height: 10px;
   border-radius: 20px;
   background-color: #eee;
   transition-duration: 0.8s;
 }
-.login-section .login-container .log-in {
+.main-section .login-section .login-container .log-in {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -300,12 +401,13 @@ html, body {
   margin-top: 25px;
   width: 100%;
 }
-.login-section .login-container .log-in .a {
+.main-section .login-section .login-container .log-in .a {
   color: #e0e0e0;
   width: 100%;
   text-decoration: none;
+  font-weight: 600;
 }
-.login-section .login-container .sign-up {
+.main-section .login-section .login-container .sign-up {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -313,7 +415,7 @@ html, body {
   margin-top: 25px;
   width: 90%;
 }
-.login-section .login-container .input {
+.main-section .login-section .login-container .input {
   width: 100%;
   height: 40px;
   padding: 10px;
@@ -322,7 +424,7 @@ html, body {
   border-radius: 10px;
   font-weight: 600;
 }
-.login-section .login-container .button {
+.main-section .login-section .login-container .button {
   color: #e0e0e0;
   background-color: #212121;
   width: 200px;
@@ -330,11 +432,11 @@ html, body {
   border-radius: 15px;
   border: #e0e0e0 solid 2px;
 }
-.login-section .login-container .button:hover {
+.main-section .login-section .login-container .button:hover {
   background-color: #e0e0e0;
   color: #212121;
 }
-.login-section .register-message {
+.main-section .login-section .register-message {
   font-family: "Fonte-principal", sans-serif;
   font-size: larger;
   color: #e0e0e0;
@@ -565,19 +667,33 @@ html, body {
 */
 /* CONFIGURAÇÕES PARA CELULAR e tablet */
 @media screen and (max-width: 1000px) {
+  .navbar-container {
+    position: absolute;
+    top: 2vh;
+    left: 10vw;
+    padding: 0;
+    width: auto;
+  }
   .navbar-right {
     display: none;
   }
+  .contacts-container {
+    display: none;
+  }
+  .contact-circle {
+    display: none;
+  }
   .main-section {
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap; /* ou wrap-reverse */
-    margin-top: 3rem;
+    flex-wrap: wrap;
+    padding-top: 6rem;
   }
   .animation-section {
-    width: 90%;
+    width: 80%;
   }
   .login-section {
-    width: 90%;
+    min-width: 100%;
     padding: 0;
   }
 }

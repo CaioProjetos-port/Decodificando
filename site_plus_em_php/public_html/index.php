@@ -54,15 +54,15 @@ if (isset($_POST['login'])) {
 <body>
 
     <!-- barra de navegação -->
-    <div class="navbar"> 
-        <div class="navbar-left">
+    <div class="navbar-container"> 
+        <a class="navbar-left" href="index.php">
             <img src="images/navbar_logo.png" alt="" class="navbar-logo">
-        </div>
+        </a>
     
         <div class="navbar-right">
             <a class="link" href="#">Início</a>
-            <a class="link" href="#">Portifólio</a>
-            <a class="link" href="#">Nossos serviços</a>
+            <a class="link" href="#">Blog</a>
+            <a class="link" href="#">Nossos cursos</a>
             <a class="link" href="#">Capitão da nave</a>
         </div>
     </div>
@@ -103,9 +103,78 @@ if (isset($_POST['login'])) {
         <i id="blink-icon-3" class="icon fa-brands fa-linkedin-in"></i>
         <i id="blink-icon-4" class="icon fa-regular fa-envelope"></i>
     </div>
+
+    <!-- seção de apresentação -->
+    <section class="slides-section">
+        <img src="./images/slide-0.png" alt="" id="slide-0" class="slide">
+        <img src="./images/slide-1.png" alt="" id="slide-1" class="slide">
+
+        <div class="barra-inferior-total">
+            <svg 
+                class="curva-full"
+                version="1.1" 
+                xmlns="http://www.w3.org/2000/svg" 
+                xmlns:xlink="http://www.w3.org/1999/xlink" 
+                x="0px" y="0px" 
+                viewBox="0 0 505.7 70.1" 
+                preserveAspectRatio="none" 
+                xml:space="preserve">
+                
+                <path fill="#212121" d="M351,32.6c-55.9,30.1-71.4,32.7-98.2,32.7s-42.3-2.6-98.2-32.7S28,0,28,0H0v70.1h28h449.6h28.1V0h-28.1C477.6,0,407,2.5,351,32.6z"></path>
+            </svg>
+        </div>
+    </section>
+
+    
+    <!-- seção das redes sociais --
+    <section class="blog-section">
+        <h1 class="section-title">Nosso Blog</h1>
+
+        <div class="blog-posts-row">
+            <div class="space-responsive"></div>
+
+            <div class="post">
+                <img id="last-post-1" class="capa" src="./images/logo.png"></img>
+                <p class="post-title">Video 1 do tik tok</p>
+            </div>
+            
+            <div class="post">
+                <img id="last-post-2" class="capa" src="./images/logo.png"></img>
+                <p class="post-title">Video 2 do Instagram</p>
+            </div>
+            
+            <div class="post">
+                <div id="last-post-3" class="blog-post">
+                    <p class="post-title"></p>
+                </div>
+            </div>
+            
+            <div class="post">
+                <div id="last-post-4" class="blog-post">
+                    <p class="post-title"></p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="section-subtitle">
+            <div class="d-flex align-items-center">
+                <p class="subtitle">Visite nossas redes sociais</p>
+                <a class="fa-brands fa-instagram"></a>
+                <a class="fa-brands fa-tiktok"></a>
+                <a class="fa-brands fa-youtube"></a>
+            </div>
+        </div>
+    </section>
+
+    IMPLEMENTAR BLOG QANDO OUVER CONTEUDO-->
+
+    <!-- 
+        CRIAR SESSÃO DE CURSOS TAMBÉM
+        copiar estrutura do blog
+    -->
     
     <!-- seção principal -->
-    <div class="main-section">
+    <section class="main-section">
 
         <!-- seção lateral principal -->
         <div id="main-section-left" class="animation-section">
@@ -145,9 +214,9 @@ if (isset($_POST['login'])) {
         </div>
         
         <!-- seção de login -->
-        <div id="talk-page" class="login-section">
-            <h1 class="login-title">Faça parte</h1>
-            <p class="login-subtitle">Crie uma conta ou entre para usar os serviços</p>
+        <div class="login-section">
+            <h1 class="login-title">Conecte-se</h1>
+            <p class="login-subtitle">Crie uma conta ou entre para acessar nossos cursos e serviços</p>
                 
             <div class="login-container">
                 <div class="conect-type">
@@ -184,7 +253,8 @@ if (isset($_POST['login'])) {
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
 
 
     <!-- portifolio -->
@@ -303,6 +373,7 @@ if (isset($_POST['login'])) {
     </div>
     -->
 
+    <br><br><br><br>
 </body>
 
 <!-- imports JavaScript -->
