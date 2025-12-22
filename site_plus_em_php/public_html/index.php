@@ -175,7 +175,7 @@ if (isset($_POST['login'])) {
     
     <!-- seção principal -->
     <section class="main-section">
-
+        
         <!-- seção lateral principal -->
         <div id="main-section-left" class="animation-section">
             <div class="animation-container">
@@ -253,6 +253,9 @@ if (isset($_POST['login'])) {
                 </div>
             </div>
         </div>
+        
+        <canvas id="canvas-particulas" class="canvas-particulas"></canvas>    
+
     </section>
 
 
@@ -373,7 +376,6 @@ if (isset($_POST['login'])) {
     </div>
     -->
 
-    <br><br><br><br>
 </body>
 
 <!-- imports JavaScript -->
