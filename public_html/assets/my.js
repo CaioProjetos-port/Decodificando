@@ -3,86 +3,6 @@ function sleep(ms) {
 }
 
 
-/* ICONE DE CONTATOS */
-
-let icon = 0;
-let show_contact = false;
-let botaobloqueado = false;
-
-// animação da aparição dos icones dos contatos no botão
-function blink_contact() 
-{
-    const contact = document.getElementById(`blink-icon-${icon}`);
-    contact.style.opacity = `1`;
-    setTimeout(function() { contact.style.opacity = `0`; }, 2000);
-
-    icon = (icon + 1) % 5;
-}
-
-// animação da entrada dos contatos
-document.querySelector('.contact-circle').addEventListener('click',
-async function() {
-
-    if (botaobloqueado) return;
-
-    else botaobloqueado = true;
-
-    show_contact = !show_contact;
-    if (show_contact)
-    {
-        for (let i = 4; i >= 1; i--) 
-        {
-            setTimeout(function() {
-                const contact = document.getElementById(`contact-${i}`);
-                contact.style.transform = `translateY(-${9 * i}vh)`;
-            }, 400 / i);
-        }
-
-        await sleep(800);
-
-        for (let i = 1; i <= 4; i++)
-        {
-            setTimeout(function() {
-                const contact = document.getElementById(`contact-${i}`);
-                contact.style.width = `200px`;
-                contact.style.borderRadius = `50px`;
-
-                const contact_text = document.getElementById(`contact-text-${i}`);
-                contact_text.style.transform = `translateX(0px)`;
-            }, 400 / i);
-        }
-    }
-    else
-    {
-        for (let i = 4; i >= 1; i--) 
-        {
-            setTimeout(function() {
-                const contact = document.getElementById(`contact-${i}`);
-                contact.style.width = `4rem`;
-                contact.style.borderRadius = `50%`;
-            }, i * 100);
-        }
-
-        await sleep(800);
-
-        for (let i = 4; i >= 1; i--) 
-        {
-            setTimeout(function() {
-                const contact_text = document.getElementById(`contact-text-${i}`);
-                contact_text.style.transform = `translateX(140px)`;
-
-                const contact = document.getElementById(`contact-${i}`);
-                contact.style.transform = `translateY(0vh)`;
-
-            }, i * 100);
-        }
-    }
-
-    setTimeout(function() {
-        botaobloqueado = false;
-    }, 2000);
-
-});
 
 
 
@@ -211,9 +131,6 @@ window.addEventListener('resize', () => {
 init();
 animate();
 
-
-blink_contact();
-setInterval(blink_contact, 3000);
 
 Animation();
 setInterval(Animation, 8000);
