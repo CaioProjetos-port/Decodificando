@@ -53,6 +53,7 @@ if (isset($_POST['login'])) {
 <body>
 
     <!-- barra de navegação -->
+
     <nav class="navbar">
         <div class="navbar-container">
 
@@ -83,29 +84,41 @@ if (isset($_POST['login'])) {
     <article class="contacts">
 
         <div class="contacts-container">
-            <a id="contact-1" class="contacts" href="https://github.com/osmozeInc" target="_blank">
-                <div class="text-content">
+            <a id="contact-1" class="contacts-group" href="https://github.com/osmozeInc" target="_blank">
+                <div class="text-container">
                     <p id="contact-text-1" class="contact-text">osmozeInc</p>
                 </div>
-                <i class="fa-brands fa-github fa-xl contact-content"></i>
+                <i class="fa-brands fa-github fa-xl contact-icon"></i>
+                <div class="text-container-reverse">
+                    <p id="contact-text-reverse-1" class="contact-text-reverse">osmozeInc</p>
+                </div>
             </a>
-            <a id="contact-2" class="contacts" href="https://www.instagram.com/caiomonte.py/" target="_blank">
-                <div class="text-content">
+            <a id="contact-2" class="contacts-group" href="https://www.instagram.com/caiomonte.py/" target="_blank">
+                <div class="text-container">
                     <p id="contact-text-2" class="contact-text">caiomonte.py</p>
                 </div>    
-                <i class="fa-brands fa-instagram fa-xl contact-content"></i>
+                <i class="fa-brands fa-instagram fa-xl contact-icon"></i>
+                <div class="text-container-reverse">
+                    <p id="contact-text-reverse-2" class="contact-text-reverse">caiomonte.py</p>
+                </div>
             </a>
-            <a id="contact-3" class="contacts" href="https://www.linkedin.com/in/dev-caiomonte/" target="_blank">
-                <div class="text-content">
+            <a id="contact-3" class="contacts-group" href="https://www.linkedin.com/in/dev-caiomonte/" target="_blank">
+                <div class="text-container">
                     <p id="contact-text-3" class="contact-text">dev-caiomonte</p>
                 </div>  
-                <i class="fa-brands fa-linkedin fa-xl contact-content"></i>
+                <i class="fa-brands fa-linkedin fa-xl contact-icon"></i>
+                <div class="text-container-reverse">
+                    <p id="contact-text-reverse-3" class="contact-text-reverse">dev-caiomonte</p>
+                </div>
             </a>
-            <a id="contact-4" class="contacts" href="mailto:caiomm076@gmail.com" target="_blank">
-                <div class="text-content">
+            <a id="contact-4" class="contacts-group" href="mailto:caiomm076@gmail.com" target="_blank">
+                <div class="text-container">
                     <p id="contact-text-4" class="contact-text">Email</p>
                 </div>  
-                <i class="fa-solid fa-envelope fa-xl contact-content"></i>
+                <i class="fa-solid fa-envelope fa-xl contact-icon"></i>
+                <div class="text-container-reverse">
+                    <p id="contact-text-reverse-4" class="contact-text-reverse">Email</p>
+                </div>
             </a>
         </div>
       
@@ -120,7 +133,9 @@ if (isset($_POST['login'])) {
         
     </article>
     
+
     <!-- seção principal -->
+
     <section class="main-section">
         
         <!-- seção lateral principal -->
@@ -181,7 +196,6 @@ if (isset($_POST['login'])) {
                     <input class="input" id="password-log" name="password-log" id="password-log" type="password" placeholder="Senha" required>
                     
                     <a href="" class="a">Esqueci a Senha</a>
-                    <br><br><br><br>
                     
                     <input class="button" name="login" type="submit" value="Entrar">
                 </form>
@@ -205,13 +219,13 @@ if (isset($_POST['login'])) {
 
     </section>
 
+
+
+    <!-- imports JavaScript -->
+    <div> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="./assets/my.js?v=<?php echo time(); ?>" type="module"></script>
+        <script src="./assets/script_contatos.js?v=<?php echo time(); ?>" type="module"></script>
+    </div>
 </body>
-
-<!-- imports JavaScript -->
-<div> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="./assets/my.js?v=<?php echo time(); ?>" type="module"></script>
-    <script src="./assets/script_contatos.js?v=<?php echo time(); ?>" type="module"></script>
-</div>
-
 </html>
